@@ -37,9 +37,11 @@ until the policy converges.
 Generally, value iteration is preferred when the state space is relatively small, and direct updates to the value function are simpler and more intuitive, while policy iteration is preferred when the policy evaluation can be performed efficiently, or when the state space is large and value iteration is costly. 
 
 **Q-learning**, on the other hand, focuses on learning the action-value function `Q(s,a)` and updates it by:
+
 $$
 Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha [R(s_t, a_t) +\gamma \max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)],
 $$
+
 usually for a fixed number of episodes.
 
 Unlike MDPs, **<span style="color:#C05780">Q-learning doesn't need the transition probabilities `P(s'|s,a)`, as it directly learns from interactions.</span>** Additionally, MDPs use a convergence threshold since they operate on a known model and update values until they no longer change significantly. In contrast, Q-learning typically uses a fixed number of episodes because it learns from interactions and does not have a clear convergence criterion due to the stochastic nature of exploration. **<span style="color:#69ADFF">Or when reward converge?</span>** 
