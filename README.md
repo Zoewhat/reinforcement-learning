@@ -21,13 +21,17 @@ Other symbols used below include `π(a|s)` as the policy (the probability of cho
 In the two approaches suggested in the prompt, the **MDP** (Markov Decision Process; off-line learning) solve the problem using Value Iteration or Policy Iteration, while the **Q-learning** (model-free; on-line learning) learn the policy through exploration and reward.
 
 More specifically, in **MDP**, the agent iteratively updates the value of each state `V(s)` by:
+
 $$
 V(s) \leftarrow \max_a \sum_{s'} P(s' | s, a)[R(s,a) + \gamma V(s')].
 $$
+
 This update continues until the value function converges to the optimal values, after which the optimal action at each state is that which maximize the expected return. Alternatively, MDP can also be solved with policy iteration, where the policy updated with:
+
 $$
 \pi'(s) \leftarrow \arg \max_a \sum_{s'} P(s'|s,a)(R(s,a,s') + \gamma V^\pi (s')),
 $$
+
 until the policy converges. 
 
 Generally, value iteration is preferred when the state space is relatively small, and direct updates to the value function are simpler and more intuitive, while policy iteration is preferred when the policy evaluation can be performed efficiently, or when the state space is large and value iteration is costly. 
