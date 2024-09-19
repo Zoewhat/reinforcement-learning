@@ -22,8 +22,8 @@ In the two approaches suggested in the prompt, the **MDP** (Markov Decision Proc
 
 More specifically, in **MDP**, the agent iteratively updates the value of each state `V(s)` by:
 $$
-V(s) \leftarrow \max_a \sum_{s'} P(s' | s, a)[R(s,a) + \gamma V(s')]
-$$.
+V(s) \leftarrow \max_a \sum_{s'} P(s' | s, a)[R(s,a) + \gamma V(s')].
+$$
 This update continues until the value function converges to the optimal values, after which the optimal action at each state is that which maximize the expected return. Alternatively, MDP can also be solved with policy iteration, where the policy updated with:
 $$
 \pi'(s) \leftarrow \arg \max_a \sum_{s'} P(s'|s,a)(R(s,a,s') + \gamma V^\pi (s')),
